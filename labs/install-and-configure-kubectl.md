@@ -13,11 +13,15 @@ sudo cp kubectl /usr/local/bin/kubectl
 ```
 
 #### OS X
-
+trust the CA that you created
 ```
 curl -O https://storage.googleapis.com/bin.kuar.io/darwin/kubectl
 chmod +x kubectl
 sudo cp kubectl /usr/local/bin/kubectl
+```
+extra
+```
+ls 
 ```
 
 ### Configure kubectl
@@ -39,7 +43,7 @@ EXTERNAL_IP=$(gcloud compute ssh node0 --command \
 ```
 
 Create the workshop cluster config:
-
+add certificates
 ```
 kubectl config set-cluster workshop \
 --certificate-authority=ca.pem \
@@ -48,7 +52,7 @@ kubectl config set-cluster workshop \
 ```
 
 Add the admin user credentials:
-
+add to my credential file
 ```
 kubectl config set-credentials admin \
 --client-key=admin-key.pem \
@@ -67,14 +71,14 @@ kubectl config set-context workshop \
 ```
 kubectl config use-context workshop
 ```
-
+so I don't have to .......
 ```
 kubectl config view
 ```
 
 ### Explore the kubectl CLI
 
-Check the health status of the cluster components:
+!!Check the health status of the cluster components:
 
 ```
 kubectl get cs
@@ -87,7 +91,7 @@ kubectl get pods
 ```
 
 List nodes:
-
+4 containers
 ```
 kubectl get nodes
 ```
@@ -97,3 +101,5 @@ List services:
 ```
 kubectl get services
 ```
+lots of events, can be streamed to central logger
+if it tries something forever, the logger might notice
