@@ -2,6 +2,8 @@
 
 In this lab you will configure the network between node0 and node1 to ensure cross host connectivity. You will also ensure containers can communicate across hosts and reach the internet.
 
+###Note: the kubernetes networking module canbe replaced with control plane of Weave, Flocker or OpenvSwitch
+
 ## Create network routes between Docker hosts.
 anyone that wants to go to 10.240.0 then go to NODE0
 
