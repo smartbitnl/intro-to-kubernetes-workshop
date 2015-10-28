@@ -7,6 +7,7 @@ gcloud compute ssh node0
 ```
 
 ## Create the kube-proxy pod
+in the future NO systemD needed, for now systemd is needed for the ORDER of services running
 
 ```
 curl -O https://storage.googleapis.com/configs.kuar.io/kube-proxy-pod.yaml
@@ -40,7 +41,7 @@ docker ps
 ```
 
 Check iptables (search for rules with 'kubernetes' comments):
-
+this in future versions in Kernel mode, for now in userspace back and forth
 ```
 sudo iptables -vL -n -t nat
 ```
@@ -52,3 +53,4 @@ gcloud compute ssh node1
 ```
 
 Repeat the steps from above.
+for the second node
