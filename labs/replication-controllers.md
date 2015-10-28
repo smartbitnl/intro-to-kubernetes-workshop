@@ -15,6 +15,10 @@ Use `rc` as a shorthand for `replicationControllers`
 ```
 kubectl get rc
 ```
+more commands with
+```
+kubectl get -h
+```
 
 ```
 kubectl get pods
@@ -27,7 +31,7 @@ kubectl get pods
 ```
 kubectl scale rc inspector --replicas=10
 ```
-
+now 10 are started, see changed with
 ```
 kubectl get pods --watch-only
 ```
