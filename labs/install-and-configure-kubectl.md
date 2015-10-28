@@ -101,5 +101,8 @@ List services:
 ```
 kubectl get services
 ```
+```
+kubctl list events??
+```
 lots of events, can be streamed to central logger
 if it tries something forever, the logger might notice
