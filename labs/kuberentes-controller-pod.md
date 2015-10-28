@@ -32,7 +32,8 @@ cat kubelet.service
 ```
 
 Start the kubelet service:
-
+Keep it running using systemd
+New owner of the machine
 ```
 sudo mv kubelet.service /etc/systemd/system/
 ```
@@ -50,7 +51,7 @@ sudo systemctl status kubelet
 ```
 
 ## Deploy the Kubernetes Controller
-
+these directories are used to create a pod:
 ```
 sudo mkdir -p /etc/kubernetes/manifests
 sudo mkdir -p /var/lib/etcd
@@ -59,7 +60,7 @@ sudo mkdir -p /var/run/kubernetes
 ```
 
 Copy certs
-
+usefull for creating pods:
 ```
 sudo cp apiserver-key.pem apiserver.pem ca.pem ca-key.pem /var/lib/kubernetes/
 ```
@@ -71,13 +72,21 @@ curl -O https://storage.googleapis.com/kuar/kube-controller-pod.yaml
 ```
 
 Copy the pod manifest to the Kubelets configuration directory:
-
+at this moment the kublet will check the directory and execute them
 ```
 sudo mv kube-controller-pod.yaml /etc/kubernetes/manifests/
 ```
-
+extra
+```
+cat kube-controller-pod.yaml
+```
+now you can refere to the containers, etcd-datadir
+and will mount in var\lib\kubernetes
 Verify:
 
 ```
 docker ps
 ```
+all kubernetes hosts are running.
+do NOT delete 
+data is persistent because we mounted volumes, even if we delete the 
