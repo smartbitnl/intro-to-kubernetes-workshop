@@ -3,8 +3,10 @@
 * Use multiple replication controllers with a single service
 * Deploy a canary application for testing
 
+a developer needs to update. Now what?
+Can not show deployment controller, future or new product. See about deployment controller yourself.
 ## Send the Canary
-
+launch version 2.0 of application. 
 ```
 kubectl run inspector-canary \
   --labels="app=inspector,track=canary" \
@@ -28,7 +30,7 @@ PROJECT_ID=$(gcloud compute ssh nginx --command \
 while true; do curl -s "http://inspector.${PROJECT_ID}.io" | \
   grep -o -e 'Version: Inspector [0-9].[0-9].[0-9]'; sleep 1; done
 ```
-
+soem customers hit version 2.0, most still on version 1.0
 Did you find the canary?
 
 ## Rolling Update
