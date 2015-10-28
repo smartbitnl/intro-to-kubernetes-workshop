@@ -4,9 +4,16 @@
 * Deploy a canary application for testing
 
 a developer needs to update. Now what?
-Can not show deployment controller, future or new product. See about deployment controller yourself.
+
 ## Send the Canary
+
 launch version 2.0 of application. 
+
+### see video on how to add port 36001 so certain customers can connect to version 2.0
+
+Kelsey can not demonstrate deployment controller, future or new product. See about deployment controller yourself.
+https://github.com/kubernetes/kubernetes/blob/master/docs/proposals/deployment.md
+search for the manifest!!
 ```
 kubectl run inspector-canary \
   --labels="app=inspector,track=canary" \
@@ -67,3 +74,10 @@ while true; do curl -s "http://inspector.${PROJECT_ID}.io" | \
 ```
 kubectl rolling-update inspector --update-period=3s --image=b.gcr.io/kuar/inspector:2.0.0
 ```
+
+QA
+* kublet --container-runtime supports both docker and rkt
+* firewalls at container level, for enterprises eg project Calico, NSX/Nicera, Nuage, etc
+ 
+if you like the course, tweet #kubernetesio #coreoslinux #oscon #kubernetes @kelseyhightower @tekgrrl
+
