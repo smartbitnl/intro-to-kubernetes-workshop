@@ -1,7 +1,7 @@
 # Initialize a certificate authority
 
 In this lab you will setup the necessary PKI infrastructure to secure the Kuberentes API for remote communication. This lab will leverage CloudFlare's PKI toolkit, [cfssl](https://github.com/cloudflare/cfssl), to bootstrap a Certificate Authority.
-
+Because the SSL commands are diffcult.
 ## Download and install cfssl
 
 ### node0
@@ -33,7 +33,10 @@ curl -O https://storage.googleapis.com/configs.kuar.io/ca-config.json
 ```
 
 ### Generate the CA certificate and private key
-
+extra command 
+```
+cat ca-csr.json
+```
 Create the CA CSR:
 
 ```
