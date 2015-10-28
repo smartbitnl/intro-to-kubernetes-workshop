@@ -1,9 +1,12 @@
 # Generate Server and Client Certs
 
 In this labs you will use cfssl to generate client and server TLS certs.
-
+so that the laptop can communicate with ???? the Kubernetes cluster
 ## Generate the kube-apiserver server cert
-
+extra
+```
+cat apiserver-csr.json
+```
 ### node0
 
 ```
@@ -90,4 +93,8 @@ Results
 admin-key.pem
 admin.csr
 admin.pem
+```
+extra
+```
+cat admin-crs
 ```
