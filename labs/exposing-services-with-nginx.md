@@ -1,5 +1,5 @@
 # Exposing Services with Nginx
-
+could use F5 load balancer ?1? 
 ### Provision the nginx VM
 
 ```
@@ -109,4 +109,8 @@ Every page refresh should show different MAC and IP address:
 
 ```
 http://inspector.PROJECT_ID.io/net
+```
+understand
+```
+cat /etc/nginx/conf.d/ inspector.conf
 ```
